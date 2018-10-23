@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ChecklistHub_Library.Libraries.Db
+namespace sidnox_soft.utilities.Database
 {
     public class SqlDb: IDisposable
     {

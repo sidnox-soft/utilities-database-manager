@@ -3,7 +3,7 @@ Disposable SQL Database Manager
 
 
 > How to use?
-```
+```C#
     using (SqlDb _db = new SqlDb(your-connection-string))
     {
         string sqlQuery = "your-sql-query-or-stored-procedures-name";

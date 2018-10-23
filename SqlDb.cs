@@ -90,8 +90,8 @@ namespace sidnox_soft.utilities.Database
         /// <param name="sQuery">string</param>
         /// <param name="dictParameters">Dictionary</param>
         /// <returns>bool</returns>
-        public bool ExecuteNonQuery(string sQuery, Dictionary<string, object> dictParameters = null,
-            bool isStoredProc = true)
+        public bool ExecuteNonQuery(string sQuery, CommandType commandType, 
+        Dictionary<string, object> dictParameters = null)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace sidnox_soft.utilities.Database
                     }
                 }
 
-                oCmd.CommandType = isStoredProc ? CommandType.StoredProcedure : CommandType.Text;
+                oCmd.CommandType = commandType;
 
                 if (oCmd.ExecuteNonQuery() > 0)
                 {
@@ -126,8 +126,8 @@ namespace sidnox_soft.utilities.Database
             }
         }
 
-        public T ExecuteScalar<T>(string sQuery, Dictionary<string, object> dictParameters = null,
-            bool isStoredProc = true)
+        public T ExecuteScalar<T>(string sQuery, CommandType commandType,
+        Dictionary<string, object> dictParameters = null)
         {
             try
             {
@@ -142,7 +142,7 @@ namespace sidnox_soft.utilities.Database
                     }
                 }
 
-                oCmd.CommandType = isStoredProc ? CommandType.StoredProcedure : CommandType.Text;
+                oCmd.CommandType = commandType;
 
                 return (T)oCmd.ExecuteScalar();
             }
@@ -162,8 +162,8 @@ namespace sidnox_soft.utilities.Database
         /// <param name="dictParameters">Dictionary</param>
         /// <param name="oSQLTran">SqlTransaction</param>
         /// <returns>DataTable</returns>
-        public DataTable ExecuteReader(string sQuery, Dictionary<string, object> dictParameters = null,
-            bool isStoredProc = true)
+        public DataTable ExecuteReader(string sQuery, CommandType commandType,
+        Dictionary<string, object> dictParameters = null)
         {
             try
             {
@@ -186,7 +186,7 @@ namespace sidnox_soft.utilities.Database
                     }
                 }
 
-                oCmd.CommandType = isStoredProc ? CommandType.StoredProcedure : CommandType.Text;
+                oCmd.CommandType = commandType;
 
                 SqlDataReader oResult = oCmd.ExecuteReader();
 

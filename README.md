@@ -2,8 +2,8 @@
 Disposable SQL Database Manager
 
 
-How to use?
-{
+**How to use?**
+<addr>
     using (SqlDb _db = new SqlDb(your-connection-string))
     {
         string sqlQuery = "your-sql-query-or-stored-procedures-name";
@@ -22,4 +22,4 @@ How to use?
         # update or insert and get bool as success or fail
         bool isSuccess = _db.ExecuteNonQuery(sqlQuery, commandType, _params);
     }
-}
+</addr>
